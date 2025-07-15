@@ -1,0 +1,18 @@
+types of http codes
+1. informational responses(100-199)
+2.successful responses(200-299)
+3.Redirection messages(300-399)
+4.client error responses(400-499)
+5.Server side errors(500-599)
+
+
+
+code-200 meaning =OK when to use: standard response for successful deletion creation put or any request
+code- 201 meaning=created when to use: when a new response is successfully created
+code-400 meaning= no content when to use: request is invalid or missing requested data
+code-401 meaning= unauthorized when to use: user is not authenticated
+code-403 meaning= forbidden when to use: user is authenticated but not allowed to perform action
+code-404 meaning= not found when to use: resource not found
+code-500 meaning= internal server error when to use: something went wrong in backend
+code-502 meaning= internal server error when to use: server received an invalid response from upstream server or server cannot connect to database
+code-503 meaning= service unavailable when to use: server is down or overloaded

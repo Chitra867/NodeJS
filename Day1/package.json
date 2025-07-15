@@ -1,0 +1,12 @@
+{
+  "name": "proff-class-3rd-sem",
+  "version": "1.0.0",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "texas":"node hello.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

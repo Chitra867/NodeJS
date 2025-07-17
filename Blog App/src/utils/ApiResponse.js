@@ -6,4 +6,4 @@ this.message = message;
 this.success =statuscode<400
     }
 }
-module.export = ApiResponse
+module.exports = ApiResponse

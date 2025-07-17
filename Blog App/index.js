@@ -13,6 +13,7 @@ const app = express();
 app.use(express.json())
 
 app.use('/api/users',require('./src/Routes/userRoutes'))
+app.use('/api/blogs',require('./src/Routes/blogRoute'))
 
 app.listen(PORT, () => {
 

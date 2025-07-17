@@ -7,7 +7,8 @@ const protect = asyncHandler(async (req, res, next) => {
     let token;
 
     // Check if token is in headers
-    if (req.headers.authorization && req.headers.authorization.startsWith("Bearer")) {
+    if (req.headers.authorization && 
+        req.headers.authorization.startsWith("Bearer")) {
         try {
             token = req.headers.authorization.split(" ")[1];
             // Verify token
@@ -27,4 +28,18 @@ const protect = asyncHandler(async (req, res, next) => {
         throw new Error("Not authorized, no token");
 }
 });
-module.exports = protect;
+
+// Middleware to authorize roles
+// This middleware checks if the user has the required role to access a route
+
+const authorizeRoles = (...roles) =>{
+    return (req, res, next) => {
+        if (!roles.includes(req.user.role)) {
+            res.status(403);
+            throw new Error(`Forbidden: You are not allowed to access this resource`);
+        }
+        next();
+    }
+
+}
+module.exports = {protect, authorizeRoles};

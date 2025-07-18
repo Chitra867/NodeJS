@@ -34,7 +34,7 @@ const protect = asyncHandler(async (req, res, next) => {
 
 const authorizeRoles = (...roles) =>{
     return (req, res, next) => {
-        if (!roles.includes(req.user.role)) {
+        if (!roles.includes(req.user.roles)) {
             res.status(403);
             throw new Error(`Forbidden: You are not allowed to access this resource`);
         }

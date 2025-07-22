@@ -1,10 +1,10 @@
-const express = require("express");
-const { registerUser, login } = require("../controllers/userControllers");
+const express = require('express');
+const { createComment ,getCommentsByBlogId} = require('../controllers/commentControllers');
+const { protect } = require('../middlewares/authMiddleware');
 
-const router =express.Router()
+const router = express.Router()
 
-router.post('/register',registerUser)
-router.post('/login',login)
+router.post('/create/:id', protect, createComment);
+router.get('/getcomment/:id', protect, getCommentsByBlogId);
 
-
-module.exports= router;
+module.exports = router;
